@@ -1,6 +1,8 @@
 # p0insettia
 A tool for [(semi-){un-(tethered jailbreak)}] of iOS 10.3.4 ~~32-bit devices~~ iPhone 5 with checkm8 BootROM exploit.  
 
+Fork of dora2ios' p0insettia that fixes some errors when building (mainly missing some IOKit library headers), so the project can be built OOB even on a fresh macOS installation.
+
 ## Note
 - All at your own risk!  
 - The package used for this jailbreak can be obtained via Cydia from the following repository.  
@@ -11,10 +13,17 @@ A tool for [(semi-){un-(tethered jailbreak)}] of iOS 10.3.4 ~~32-bit devices~~ i
 
 ## Supported environments
 - macOS 10.13 (or later?) (intel/x86_64)
+- Works using a QEMU VM from a Linux host with proper PCIe USB controller passthrough:
+   - Setup a QEMU VM using [OSX-KVM](https://github.com/kholia/OSX-KVM). Virt-Manager and GNOME-Boxes (Libvirt) method is also working fine.
+   - Once macOS is installed and set-up, check [this repo](https://github.com/Silfalion/Iphone_docker_osx_passthrough) and follow the instructions in order to passtrhough your USB controller to the macOS VM.
+
+## Prerequisites
+Before trying to build p0insettia, you need to get the ARM Embedded Toolchain v4.7 from [here](https://launchpad.net/gcc-arm-embedded/4.7/4.7-2013-q1-update).
+Otherwise the build will fail as the iBoot payload hook needs an old version of the toolchain. 
 
 ## Make
 ```
-git clone https://github.com/dora2-iOS/p0insettia --recursive && cd p0insettia
+git clone https://github.com/JesusXD88/p0insettiaPatched --recursive && cd p0insettiaPatched
 ./build.sh all
 ```
 
@@ -45,6 +54,7 @@ Some other jailbreak apps may require this entitlement.
 ```
 
 ## credits
+- @dora2ios for this incredible tool [p0insettia](https://github.com/dora2-iOS/p0insettia)
 - @axi0mX for the [checkm8 exploit](https://github.com/axi0mX/ipwndfu)  
 - @LinusHenze for the [Fugu](https://github.com/LinusHenze/Fugu)  
 - @planetbeing for [XPwn](https://github.com/planetbeing/xpwn) and [ios-jailbreak-patchfinder](https://github.com/planetbeing/ios-jailbreak-patchfinder)  

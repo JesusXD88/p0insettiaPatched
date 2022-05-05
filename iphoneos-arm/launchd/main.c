@@ -18,8 +18,8 @@
  *
  */
 
-#include <IOKit/IOKitLib.h>
-#include <IOKit/IOCFSerialize.h>
+#include "../../reloader/reloader/include/IOKit/IOKitLib.h"
+#include "../../reloader/reloader/include/IOKit/IOCFSerialize.h"
 #include <CoreFoundation/CoreFoundation.h>
 #include <assert.h>
 #include <sys/param.h>

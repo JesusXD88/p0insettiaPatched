@@ -11,7 +11,7 @@
 #include <stddef.h>
 #include <assert.h>
 #include <pthread.h>
-#include <IOKit/IOKitLib.h>
+#include "include/IOKit/IOKitLib.h"
 
 #include "exploit_utilities.h"
 
