@@ -19,6 +19,7 @@ Fork of dora2ios' p0insettia that fixes some errors when building (mainly missin
 
 ## Prerequisites
 Before trying to build p0insettia, you need to get the ARM Embedded Toolchain v4.7 from [here](https://launchpad.net/gcc-arm-embedded/4.7/4.7-2013-q1-update).
+Once downloaded, extract the archive and move the contents to /opt/gnuarm .
 Otherwise the build will fail as the iBoot payload hook needs an old version of the toolchain. 
 
 ## Make
